@@ -7,6 +7,8 @@ program BatallaPorTurnos {
 	//El heroe ataca, usa magia o cura
 	//El ataque tiene que tener una probabilidad de critico(Mejorar la probabilidad, si es 0 es porque falla el ataque)
 	//Cuando la vida de uno de ellos(el heroe o el enemigo) queden en 0, terminar el juego 
+	//Agregar sonido, pero creo que wollok no lo permite
+	//Mejorar para despues el codigo, primero terminar el juego 
 	game.title("Intento de Juego")
 	game.width(10)
 	game.height(10)
