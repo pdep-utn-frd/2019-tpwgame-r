@@ -5,7 +5,7 @@ import Personajes.*
 object juego{
 	method iniciar(){
 		//VISUALES
-		game.title("Intento de Juego")
+		game.title("Final Parcial Fantasy")
 		game.width(10)
 		game.height(10)
 		game.addVisual(heroe)
