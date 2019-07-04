@@ -154,7 +154,8 @@ object enemigo {
 	method cura(){
 		if(magia > 20){
 			magia = magia - 50
-			vida = vida + 300	
+			vida = vida + 300
+			self.barraVida()	
 		}		
 	}
 	
@@ -183,11 +184,14 @@ object borrarFoto{
 		}
 }
 
+
+//Animacion del ataque del heroe
 object ataqueheroe{
 	var property position = game.at(0,3)
 	method image() = "22.png"
 }
 
+//Objetos para la animacion de vida
 object vidas{
 	var property image = "vidaEnemiga100.png"
 	var property position = game.at(5,4)
