@@ -12,6 +12,8 @@ object juego{
 		game.width(10)
 		game.height(10)
 		keyboard.z().onPressDo{
+			game.sound("golpe2.mp3")
+			game.sound("Cut_ff.mp3")
 			game.removeVisual(fondoCambio)
 			game.removeVisual(logoStreet)
 			game.addVisual(heroe)
@@ -31,7 +33,6 @@ object juego{
 			}
 			else{
 				heroe.atacar()
-				game.sound("golpe2.mp3")
 			}
 		}
 		keyboard.num2().onPressDo{heroe.cura()}
@@ -42,6 +43,7 @@ object juego{
 				game.stop()
 			}
 		}
+		keyboard.backspace().onPressDo{game.stop()} 
 		}
 		
 		

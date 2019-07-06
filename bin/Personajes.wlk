@@ -126,7 +126,7 @@ object enemigo {
 		else if(vida == 1000*0.35 or vida > 1000*0.10){
 			vidas.vida35()
 		}
-		else if(self.muerto()){
+		else if(vida < 1000* 0.35 or self.muerto()){
 			vidas.vida0()
 		}
 	}
@@ -249,8 +249,7 @@ object cartel{
 	var property position = game.at(0,0)
 	var property image = "enemigoMuerto.png"
 }
-* 
-* 
+*
 */
 
 object fondoCambio{
