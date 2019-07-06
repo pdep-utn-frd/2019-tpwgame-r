@@ -14,24 +14,24 @@ object juego{
 		keyboard.z().onPressDo{
 			game.removeVisual(fondoCambio)
 			game.removeVisual(logoStreet)
-		game.addVisual(heroe)
-		game.addVisual(enemigo)
-		vidas.position().drawElement(vidas)
-		vidaHeroe.position().drawElement(vidaHeroe)
+			game.addVisual(heroe)
+			game.addVisual(enemigo)
+			vidas.position().drawElement(vidas)
+			vidaHeroe.position().drawElement(vidaHeroe)
 		
 		
 		//TECLADO
 		keyboard.num1().onPressDo{
 			if(enemigo.muerto()){
 				game.removeVisual(enemigo)
-				game.say(heroe,"Ganaste Ya no hay nada mas que hacer
-			presiona K para SALIR")
+				game.say(heroe,"Ganaste presiona K para SALIR")
 			}
 			else if(heroe.muerto()){
 				game.say(enemigo,"Perdiste K para salir")
 			}
 			else{
 				heroe.atacar()
+				game.sound("golpe2.mp3")
 			}
 		}
 		keyboard.num2().onPressDo{heroe.cura()}

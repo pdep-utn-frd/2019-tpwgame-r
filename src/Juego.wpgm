@@ -2,7 +2,7 @@ import wollok.game.*
 import Personajes.*
 import Configurar.*
 
-program BatallaPorTurnos {
+program Bata11llaPorTurnos {
 	
 	/*
 	 El enemigo solo ataca cuando el heroe termina de atacar

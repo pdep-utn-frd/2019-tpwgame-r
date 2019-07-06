@@ -25,7 +25,8 @@ object heroe {
 	}
 	
 	method vidaHeroe(){
-		if(vida == 500*0.75 or vida > 500*0.50){
+		if(vida == 500*0.75 or vida > 500*0.50
+		){
 			vidaHeroe.vida75()
 		}
 		else if(vida == 500*0.50 or vida > 500*0.35){
@@ -203,12 +204,16 @@ object vidas{
 			image = "vidaEnemiga35.png"
 	}
 	method vida75(){
-		if(image == "vidaEnemiga100.png")
+		if(image == "vidaEnemiga100.png" or image =="vidaEnemiga50.png")
 			image = "vidaEnemiga75.png"
 	}
 	method vida50(){
-		if(image == "vidaEnemiga75.png")
+		if(image == "vidaEnemiga75.png" or image =="vidaEnemiga35.png")
 			image = "vidaEnemiga50.png"
+	}
+	method vida100(){
+		if(image == "vidaEnemiga75.png")
+			image = "vidaEnemiga100.png"
 	}
 }
 object vidaHeroe{
@@ -224,12 +229,16 @@ object vidaHeroe{
 			image = "vidaEnemiga35.png"
 	}
 	method vida75(){
-		if(image == "vidaEnemiga100.png")
+		if(image == "vidaEnemiga100.png" or image =="vidaEnemiga50.png")
 			image = "vidaEnemiga75.png"
 	}
 	method vida50(){
-		if(image == "vidaEnemiga75.png")
+		if(image == "vidaEnemiga75.png" or image =="vidaEnemiga35.png")
 			image = "vidaEnemiga50.png"
+	}
+	method vida100(){
+		if(image == "vidaEnemiga75.png")
+			image = "vidaEnemiga100.png"
 	}
 }
 
