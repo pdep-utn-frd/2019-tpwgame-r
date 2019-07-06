@@ -6,19 +6,26 @@ object juego{
 	method iniciar(){
 		//VISUALES
 		game.title("Intento de Juego")
+		game.addVisual(fondoCambio)
+		game.addVisual(logoStreet)
+		game.boardGround("fondoprima.png")
 		game.width(10)
 		game.height(10)
+		keyboard.z().onPressDo{
+			game.removeVisual(fondoCambio)
+			game.removeVisual(logoStreet)
 		game.addVisual(heroe)
 		game.addVisual(enemigo)
-		game.boardGround("fondoprima.png")
 		vidas.position().drawElement(vidas)
 		vidaHeroe.position().drawElement(vidaHeroe)
+		
 		
 		//TECLADO
 		keyboard.num1().onPressDo{
 			if(enemigo.muerto()){
 				game.removeVisual(enemigo)
-				game.say(heroe,"Ganaste Ya no hay nada mas que hacer K para SALIR")
+				game.say(heroe,"Ganaste Ya no hay nada mas que hacer
+			presiona K para SALIR")
 			}
 			else if(heroe.muerto()){
 				game.say(enemigo,"Perdiste K para salir")
@@ -35,6 +42,9 @@ object juego{
 				game.stop()
 			}
 		}
+		}
+		
+		
 	}
 	
 	

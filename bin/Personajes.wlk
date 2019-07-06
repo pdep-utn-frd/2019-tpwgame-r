@@ -6,11 +6,7 @@ import wollok.game.*
  * Mejorar codigo crear Clase PERSONAJE, por el momento lo mas importante son heroe y enemigo
  * mas adelante estaria bueno luego de eliminar al enemigo, hacer un JEFE FINAL con mas opciones como Magia y AtaqueEspecial
  * 
- * Mejorar codigo ----------> mas objeto
- * 
- * 
- * Probar musica -----------> ff.mp3 y Cut_ff.mp3(Por el momento hay un error con wollokGame o Wollok en general)
- * 
+ * Mejorar codigo ----------> mas objeto 
  * Hacer una pantalla de bienvenida ENTER ----> Iniciar Batalla
  * 									ESC ------> Salir del juego
  */
@@ -21,6 +17,7 @@ object heroe {
 	var vida = 500
 	var magia = 500
 	var property image = "persona.png"
+	var impacto = [0,1,2]
 	method nombre() = "Persona"
 	
 	method vidaActual(){
@@ -46,7 +43,7 @@ object heroe {
 	
 	
 	method criticoOFalla(){
-		return ataque*((0.randomUpTo(2))).roundUp()
+		return ataque*(impacto.anyOne())
 	}
 	
 	method animacionAtaque(){
@@ -60,7 +57,7 @@ object heroe {
 			self.animacionAtaque()
 			enemigo.recibirAtaque(self.criticoOFalla())
 			enemigo.ataqueEnemigo()
-			magia = magia + 10
+			magia += 10
 		}
 	}
 	
@@ -79,7 +76,7 @@ object heroe {
 	}
 	
 	method magia(){
-		if(magia > 20 ){
+		if(magia > 20){
 			enemigo.recibirAtaque(50)
 			magia = magia - 20
 			enemigo.ataqueEnemigo()
@@ -87,9 +84,10 @@ object heroe {
 	}
 	
 	method cura(){
-		if(magia > 20 and vida < 300){
+		if(magia > 50 and vida < 300){
 			vida = vida + 50
 			magia = magia - 50
+			self.vidaHeroe()
 			enemigo.ataqueEnemigo()	
 		}
 	}
@@ -245,3 +243,13 @@ object cartel{
 * 
 * 
 */
+
+object fondoCambio{
+	var property image = "fondonegro.png"
+	var property position = game.at(0,0)
+}
+
+object logoStreet{
+	var property image = "streetfighter.jpg"
+	var property position = game.at(2,5)
+}
