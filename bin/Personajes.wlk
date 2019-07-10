@@ -210,7 +210,7 @@ object ataqueheroe{
 //Objetos para la animacion de vida
 object vidas{
 	var property image = "vidaEnemiga100.png"
-	var property position = game.at(5,4)
+	var property position = game.at(5,9)
 	
 	method vida0(){
 	
