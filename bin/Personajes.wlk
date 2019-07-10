@@ -25,15 +25,23 @@ object heroe {
 	}
 	
 	method vidaHeroe(){
-		if(vida == 500*0.75 or vida > 500*0.50
-		){
+		if (vida <= 500*0.875 && vida > 500*0.75){
+			vidaHeroe.vida87()
+		}
+		else if(vida <= 500*0.75 && vida > 500*0.625){
 			vidaHeroe.vida75()
 		}
-		else if(vida == 500*0.50 or vida > 500*0.35){
+		else if(vida <= 500*0.625 && vida > 500*0.50){
+			vidaHeroe.vida62()
+		}
+		else if(vida <= 500*0.50 && vida > 500*0.35){
 			vidaHeroe.vida50()
 		}
-		else if(vida == 500*0.35 or vida > 500*0.10){
+		else if(vida <= 500*0.35 && vida > 500*0.10){
 			vidaHeroe.vida35()
+		}
+			else if(vida <= 500*0.1 && vida > 500*0.01){
+			vidaHeroe.vida10()
 		}
 		else if(self.muerto()){
 			vidaHeroe.vida0()
@@ -117,16 +125,25 @@ object enemigo {
 	
 	
 	method barraVida(){
-		if(vida == 1000*0.75 or vida > 1000*0.50){
+		if (vida <= 1000*0.875 && vida > 1000*0.75){
+			vidaHeroe.vida87()
+		}
+		else if(vida <= 1000*0.75 && vida > 1000*0.625){
 			vidas.vida75()
 		}
-		else if(vida == 1000*0.50 or vida > 1000*0.35){
+		else if(vida <= 1000*0.625 && vida > 1000*0.50){
+			vidaHeroe.vida62()
+		}
+		else if(vida <= 1000*0.50 && vida > 1000*0.35){
 			vidas.vida50()
 		}
-		else if(vida == 1000*0.35 or vida > 1000*0.10){
+		else if(vida <= 1000*0.35 && vida > 1000*0.10){
 			vidas.vida35()
 		}
-		else if(vida < 1000* 0.35 or self.muerto()){
+		else if(vida <= 500*0.1 && vida > 500*0.01){
+			vidaHeroe.vida10()
+		}
+		else if(vida < 1000* 0.01 or self.muerto()){
 			vidas.vida0()
 		}
 	}
@@ -196,23 +213,35 @@ object vidas{
 	var property position = game.at(5,4)
 	
 	method vida0(){
-		if(image == "vidaEnemiga35.png")
+	
 			image = "vidaEnemiga0.png"
 	}
+		method vida10(){
+		
+			image = "vidaEnemiga10.png"
+	}
 	method vida35(){
-		if(image == "vidaEnemiga50.png")
+		
 			image = "vidaEnemiga35.png"
 	}
+		method vida62(){
+		
+			image = "vidaEnemiga62.png"
+	}
 	method vida75(){
-		if(image == "vidaEnemiga100.png" or image =="vidaEnemiga50.png")
+		
 			image = "vidaEnemiga75.png"
 	}
 	method vida50(){
-		if(image == "vidaEnemiga75.png" or image =="vidaEnemiga35.png")
+		
 			image = "vidaEnemiga50.png"
 	}
+		method vida87(){
+		
+			image = "vidaEnemiga87.png"
+	}
 	method vida100(){
-		if(image == "vidaEnemiga75.png")
+		
 			image = "vidaEnemiga100.png"
 	}
 }
@@ -221,23 +250,35 @@ object vidaHeroe{
 	var property position = game.at(0,6)
 	
 	method vida0(){
-		if(image == "vidaEnemiga35.png")
+	
 			image = "vidaEnemiga0.png"
 	}
+		method vida10(){
+		
+			image = "vidaEnemiga10.png"
+	}
 	method vida35(){
-		if(image == "vidaEnemiga50.png")
+		
 			image = "vidaEnemiga35.png"
 	}
+		method vida62(){
+		
+			image = "vidaEnemiga62.png"
+	}
 	method vida75(){
-		if(image == "vidaEnemiga100.png" or image =="vidaEnemiga50.png")
+		
 			image = "vidaEnemiga75.png"
 	}
 	method vida50(){
-		if(image == "vidaEnemiga75.png" or image =="vidaEnemiga35.png")
+		
 			image = "vidaEnemiga50.png"
 	}
+		method vida87(){
+		
+			image = "vidaEnemiga87.png"
+	}
 	method vida100(){
-		if(image == "vidaEnemiga75.png")
+		
 			image = "vidaEnemiga100.png"
 	}
 }
