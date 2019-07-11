@@ -58,7 +58,11 @@ object heroe {
 	method animacionAtaque(){
 		if(image == "persona.png" ){
 			image = "22.png"
-		}else {image = "persona.png"}
+		}
+		else if(enemigo.muerto() and image == "22.png"){
+			image == "persona.png"
+		}
+		else {image = "persona.png"}
 	}
 	
 	method atacar(){
@@ -293,6 +297,11 @@ object cartel{
 }
 *
 */
+
+object victoria{
+	var property image = "VICTORIA.png"
+	var position = game.at(2,8)
+}
 
 object fondoCambio{
 	var property image = "fondonegro.png"

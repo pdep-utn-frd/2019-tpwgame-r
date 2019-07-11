@@ -25,7 +25,12 @@ object juego{
 		keyboard.num1().onPressDo{
 			if(enemigo.muerto()){
 				game.removeVisual(enemigo)
-				game.say(heroe,"Ganaste presiona K para SALIR")
+				game.removeVisual(vidas)
+				game.addVisual(victoria)
+				game.removeVisual(vidaHeroe)
+				game.removeVisual(heroe)
+				game.at(3,5).drawElement(heroe)
+				//game.say(heroe,"Ganaste Ya no hay nada mas que hacer K para SALIR")
 			}
 			else if(heroe.muerto()){
 				game.say(enemigo,"Perdiste K para salir")
