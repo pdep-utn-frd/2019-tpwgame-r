@@ -94,6 +94,7 @@ object heroe {
 	
 	method cura(){
 		if(magia > 50 and vida < 300){
+			game.sound("curar.mp3")
 			vida = vida + 50
 			magia = magia - 50
 			self.vidaHeroe()
