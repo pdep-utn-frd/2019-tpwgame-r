@@ -88,13 +88,11 @@ object heroe {
 		self.vidaHeroe()
 	}
 	
-	method magia(){
-		if(magia > 20){
-			enemigo.recibirAtaque(50)
-			magia = magia - 20
-			enemigo.ataqueEnemigo()
-		}
+	
+	method realizar(accion) {
+	    accion.aplicarseSobre(enemigo)
 	}
+
 	
 	method cura(){
 		if(magia > 50 and vida < 300){
@@ -119,6 +117,16 @@ object jefeFinal{
 	method image() = "ultima.png"
 }
 */
+
+ object magia
+    
+ 	method efectuarseSobre(alguien){
+		//if(magia > 20){
+			alguien.recibirAtaque(50)
+			//magia = magia - 20
+			alguien.ataqueEnemigo()
+		//}
+	}
 
 object enemigo {
 	var property position = game.center()
