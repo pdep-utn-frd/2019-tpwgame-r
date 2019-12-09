@@ -43,6 +43,8 @@ object juego{
 		keyboard.num2().onPressDo{heroe.cura()}
 		keyboard.num3().onPressDo{heroe.ataqueEspecial()}
 		keyboard.num4().onPressDo{heroe.magia()}
+//		keyboard.num4().onPressDo{heroe.realizar(magia)}
+
 		keyboard.k().onPressDo{
 			if(enemigo.muerto() or heroe.muerto()){
 				game.stop()
