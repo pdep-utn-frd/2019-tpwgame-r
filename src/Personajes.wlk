@@ -174,7 +174,7 @@ object enemigo {
 		if(vida > 300)
 			self.atacar()
 		else{
-			self.cura()
+			self.recibirCura()
 		}
 	}
 	
