@@ -24,28 +24,8 @@ object heroe {
 		return vida
 	}
 	
-	method vidaHeroe(){
-		if (vida <= 500*0.875 && vida > 500*0.75){
-			vidaHeroe.vida87()
-		}
-		else if(vida <= 500*0.75 && vida > 500*0.625){
-			vidaHeroe.vida75()
-		}
-		else if(vida <= 500*0.625 && vida > 500*0.50){
-			vidaHeroe.vida62()
-		}
-		else if(vida <= 500*0.50 && vida > 500*0.35){
-			vidaHeroe.vida50()
-		}
-		else if(vida <= 500*0.35 && vida > 500*0.10){
-			vidaHeroe.vida35()
-		}
-			else if(vida <= 500*0.1 && vida > 500*0.01){
-			vidaHeroe.vida10()
-		}
-		else if(self.muerto()){
-			vidaHeroe.vida0()
-		}
+	method imagenVida(){
+	image = "vidaHeroe" + self.vidaActual().toString() + ".png"
 	}
 	
 	
@@ -145,28 +125,8 @@ object enemigo {
 	method nombre() = "Enemigo"
 	
 	
-	method barraVida(){
-		if (vida <= 1000*0.875 && vida > 1000*0.75){
-			vidaHeroe.vida87()
-		}
-		else if(vida <= 1000*0.75 && vida > 1000*0.625){
-			vidas.vida75()
-		}
-		else if(vida <= 1000*0.625 && vida > 1000*0.50){
-			vidaHeroe.vida62()
-		}
-		else if(vida <= 1000*0.50 && vida > 1000*0.35){
-			vidas.vida50()
-		}
-		else if(vida <= 1000*0.35 && vida > 1000*0.10){
-			vidas.vida35()
-		}
-		else if(vida <= 500*0.1 && vida > 500*0.01){
-			vidaHeroe.vida10()
-		}
-		else if(vida < 1000* 0.01 or self.muerto()){
-			vidas.vida0()
-		}
+method imagenVida(){
+	image = "vidaEnemigo" + self.vidaActual().toString() + ".png"
 	}
 	
 	
