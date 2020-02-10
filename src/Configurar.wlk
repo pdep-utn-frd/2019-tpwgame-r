@@ -6,7 +6,6 @@ object juego{
 	method iniciar(){
 		//VISUALES
 		game.title("Intento de Juego")
-		game.addVisual(fondoCambio)
 		game.addVisual(logoStreet)
 		game.boardGround("fondoprima.png")
 		game.width(10)
