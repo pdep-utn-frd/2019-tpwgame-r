@@ -25,11 +25,8 @@ object heroe {
 	}
 	
 	method imagenVida(){
-	image = "vidaHeroe" + self.vidaActual().toString() + ".png"
+	vidas.mostrarVida(heroe)
 	}
-	
-	
-	
 	
 	method criticoOFalla(){
 		return ataque*(impacto.anyOne())
@@ -124,9 +121,9 @@ object enemigo {
 	var property image = "ultima2.png"
 	method nombre() = "Enemigo"
 	
-	
+		
 method imagenVida(){
-	image = "vidaEnemigo" + self.vidaActual().toString() + ".png"
+	vidas.mostrarVida(enemigo)
 	}
 	
 	
@@ -193,77 +190,16 @@ object vidas{
 	var property image = "vidaEnemiga100.png"
 	var property position = game.at(5,9)
 	
-	method vida0(){
+	method mostraVida(personaje){
 	
-			image = "vidaEnemiga0.png"
-	}
-		method vida10(){
-		
-			image = "vidaEnemiga10.png"
-	}
-	method vida35(){
-		
-			image = "vidaEnemiga35.png"
-	}
-		method vida62(){
-		
-			image = "vidaEnemiga62.png"
-	}
-	method vida75(){
-		
-			image = "vidaEnemiga75.png"
-	}
-	method vida50(){
-		
-			image = "vidaEnemiga50.png"
-	}
-		method vida87(){
-		
-			image = "vidaEnemiga87.png"
-	}
-	method vida100(){
-		
-			image = "vidaEnemiga100.png"
-	}
+		image = personaje.nombre() + personaje.vidaActual().toString() + ".png"}
+	
 }
 object vidaHeroe{
 	var property image = "vidaEnemiga100.png"
 	var property position = game.at(0,6)
 	
-	method vida0(){
 	
-			image = "vidaEnemiga0.png"
-	}
-		method vida10(){
-		
-			image = "vidaEnemiga10.png"
-	}
-	method vida35(){
-		
-			image = "vidaEnemiga35.png"
-	}
-		method vida62(){
-		
-			image = "vidaEnemiga62.png"
-	}
-	method vida75(){
-		
-			image = "vidaEnemiga75.png"
-	}
-	method vida50(){
-		
-			image = "vidaEnemiga50.png"
-	}
-		method vida87(){
-		
-			image = "vidaEnemiga87.png"
-	}
-	method vida100(){
-		
-			image = "vidaEnemiga100.png"
-	}
-}
-
 
 /* 
  * Futura actualizacion en el cual al matar al enemigo aparezca un cartel.
