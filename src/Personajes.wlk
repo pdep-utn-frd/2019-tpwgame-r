@@ -109,6 +109,7 @@ object heroe {
 	}
 }
 
+
 /*
  * Para futura actualizacion
  
@@ -127,6 +128,13 @@ object jefeFinal{
 			alguien.ataqueEnemigo()
 		//}
 	}
+object ataque{
+  method efectuarseSobre(alguien){
+  alguien.recibirAtaque(10)
+  alguien.ataqueEnemigo()}}
+  object cura{
+  method efectuarseSobre(alguien){
+  alguien.recibirCura()}}
 
 object enemigo {
 	var property position = game.center()
