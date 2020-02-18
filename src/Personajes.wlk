@@ -42,43 +42,25 @@ object heroe {
 		else {image = "persona.png"}
 	}
 	
-	method atacar(){
-		if(!self.muerto() and !enemigo.muerto()){
-			self.animacionAtaque()
-			enemigo.recibirAtaque(self.criticoOFalla())
-			enemigo.ataqueEnemigo()
-			magia += 10
-		}
-	}
-	
-	method ataqueEspecial(){
-		if(!self.muerto() and !enemigo.muerto()){
-			if(vida < 300){
-				enemigo.recibirAtaque(ataque*10)
-				self.animacionAtaque()
-			}	
-		}
-	}
-	
 	method recibirAtaque(danio){
 		vida = vida - danio
 		self.vidaHeroe()
 	}
-	
+	method recibirAtaqueEsp(){
+	self.recibirAtaque(ataque * 3)}
 	
 	method realizar(accion) {
 	    accion.aplicarseSobre(enemigo)
 	}
-
-	
-	method cura(){
-		if(magia > 50 and vida < 300){
-			game.sound("curar.mp3")
-			vida = vida + 50
-			magia = magia - 50
-			self.vidaHeroe()
-			enemigo.ataqueEnemigo()	
-		}
+	method reducirMagia(cantidad){
+		magia = magia - cantidad
+		self.magia()
+	}
+	method recibirHechizo(){
+		vida = vida - 15
+	}
+	method recibirCura(){
+		vida = vida + 200
 	}
 	
 	method muerto(){
@@ -96,22 +78,28 @@ object jefeFinal{
 }
 */
 
- object magia
-    
- 	method efectuarseSobre(alguien){
-		//if(magia > 20){
-			alguien.recibirAtaque(50)
-			//magia = magia - 20
-			alguien.ataqueEnemigo()
-		//}
-	}
-object ataque{
+ object ataque{
   method efectuarseSobre(alguien){
   alguien.recibirAtaque(10)
   alguien.ataqueEnemigo()}}
-  object cura{
+  
+object cura{
   method efectuarseSobre(alguien){
-  alguien.recibirCura()}}
+  alguien.recibirCura()
+  alguien.hacerMagia(alguien)}
+}
+ 
+object magia{
+    method efectuarseSobre(alguien){
+    	alguien.recibirHechizo()}
+    method hacerMagia(personaje){
+ 		personaje.reducirMagia(10)}
+ 		}
+object ataqueEspecial{
+	method efectuarseSobre(alguien){
+		alguien.recibirAtaqueEsp()
+	}
+}
 
 object enemigo {
 	var property position = game.center()
@@ -125,33 +113,27 @@ object enemigo {
 method imagenVida(){
 	vidas.mostrarVida(enemigo)
 	}
-	
-	
-	method ataqueEnemigo(){
-		if(vida > 300)
-			self.atacar()
-		else{
-			self.recibirCura()
-		}
-	}
-	
 	method recibirAtaque(danio){
 		vida = vida - danio
-		self.barraVida()
 		self.animacionAtacado()
 	}
+	method recibirAtaqueEsp(){
+	self.recibirAtaque(ataque * 4)}
 	
 	method atacar(){
 		heroe.recibirAtaque(ataque)
 	}
-	
-	method cura(){
-		if(magia > 20){
-			magia = magia - 50
+		method recibirCura(){
 			vida = vida + 300
-			self.barraVida()	
-		}		
 	}
+	method hacerMagia(){
+		self.reducirMagia(40)
+	}
+	method reducirMagia(cantidad){
+		magia = magia - cantidad
+		self.magia()
+	}
+	
 	
 	method vidaActual(){
 		return vida
